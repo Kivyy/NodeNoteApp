@@ -12,7 +12,14 @@ let command = process.argv[2];
 console.log(argv);
 
 if (command === 'add') {
-  notes.addNote(argv.title, argv.body);
+    let note = notes.addNote(argv.title, argv.body);
+    
+    if (note){
+      console.log("Successfully added note", note )
+    } else {
+      console.log("Note already exist, please try it again.")
+    };
+
 } else if (command === 'list') {
   notes.getAll();
 } else if (command === 'remove') {
