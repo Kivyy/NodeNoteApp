@@ -48,6 +48,8 @@ let removeNote = (title) => {
     return note.title != title;
   })
   saveNotes(keepNotes);
+
+  return notes.length !== keepNotes.length;
 }
 
 module.exports = {
