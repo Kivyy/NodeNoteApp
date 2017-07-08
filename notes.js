@@ -35,11 +35,16 @@ let addNote = (title, body) => {
 };
 
 let getAll = () => {
-  console.log("Getting all notes");
+  return fetchNotes();
 };
 
 let readNote = (title) => {
-  console.log("Reading note:", title )
+  let notes = fetchNotes();
+  let theOneNote = notes.filter((note) => {
+    return note.title === title;
+  })
+
+  return theOneNote[0];
 }
 
 let removeNote = (title) => {
