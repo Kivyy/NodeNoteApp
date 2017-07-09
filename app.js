@@ -13,7 +13,6 @@ console.log(argv);
 
 if (command === 'add') {
     let note = notes.addNote(argv.title, argv.body);
-
     if (note){
       console.log("Successfully added note", note )
     } else {
